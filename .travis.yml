@@ -8,7 +8,7 @@ cache:
   - node_modules
 env:
   global:
-  - BX_APP=visual-recognition-demo
+  - BX_APP=visual-recognition-demo-andres
   - BX_API=https://api.ng.bluemix.net
   - BX_ORGANIZATION=andres.villa
   - BX_SPACE=dev
