@@ -3,7 +3,6 @@ dist: trusty
 sudo: required
 node_js: 6
 script: npm test
-
 cache:
   directories:
   - node_modules
@@ -14,11 +13,12 @@ env:
   - CF_ORGANIZATION=WatsonPlatformServices
   - CF_SPACE=demos
   - VISUAL_RECOGNITION_API_KEY="bogus key to let server spin up for offline tests"
-before_deploy: npm install -g https://github.com/germanattanasio/cf-blue-green
+  - secure: UZqYG1hqecQYUcUgTSVLw944fCwYj8i9uOGMRoW+6j1s5vbvypC1u6TpX8qmzkGX6XGC+KpoqZ8kyXY7W5AoKQ2J+Ray2SeKXrMOaOOrrPgAn8p5Qn2vnx/M5xEzfccUOnPekseAlhyY34vvYZ3Vu5xCKfPj2vH5ttXwq3WRdi1obQpzfDC3cemRv7NjD+/recM6+XMkIp/22FwcXLnVXsSejmJ9cL0wV2QGFT+lh1CjWNJvkVU42b6PH3o7i3pvPamWtkbTldqdhjSb1fINAC6EypULtkuRJyxFFpMb3mJWB/4JH5aCcYg3Apz9C3LJPEFeAbWYtEPeRSZhCYxZffMy0KDgRYm0xeWfly7TA1HIdcRew9hZiwZNZ1XHFj3Ee0if3+/xAQnHvqcW2+GBee2Xf4/zPzhPrfQ2UrfJAJxANnV8Bq5yJcGIJh0L+kg7ZfDZUVTBr1aRIyd/s+2Hmrahu7yIaQLIXOfVmmKjMmbeZVIzCAkFapX+QbDSg/KFcOthpNpwryAy6kGbyGU5ogz0YHlC3DNK4zs9RB17OH2dtu/qhrhUYs5r2Utx9KP6OC8urb7DhB6AZG/u7a64I0/nfnJPFeGqo/pHkenXu2ymfBSbQNQYqmCFrWYZYPmMNHX8A51yF9L8BOzawtnhbKA8WEdvFfLgTufQSsamwU0=
+before_deploy: npm install -g https://github.com/andresfvilla/bx-blue-green
 deploy:
   provider: script
   script:
-    - cf-blue-green-travis
+  - cf-blue-green-travis
   on:
     branch: master
     repo: watson-developer-cloud/visual-recognition-nodejs
