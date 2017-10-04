@@ -3,6 +3,7 @@ dist: trusty
 sudo: required
 node_js: 6
 script: npm test
+
 cache:
   directories:
   - node_modules
